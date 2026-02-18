@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AppliedExperiment</title>
-  <link rel="icon" type="image/png" href="logo.png">
 
   <style>
-  body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #e2e8f0;
-    overflow: hidden;
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
 
-    background:
-      linear-gradient(
+      background: linear-gradient(
         120deg,
         #2F7F6F,
         #4F8FB3,
@@ -27,81 +24,104 @@
         #2F7F6F
       );
 
-    background-size: 300% 300%;
-    animation: gradientFlow 25s ease infinite;
-  }
+      background-size: 300% 300%;
+      animation: gradientFlow 25s ease infinite;
+    }
 
-  @keyframes gradientFlow {
-    0%   { background-position: 0% 50%; }
-    25%  { background-position: 100% 50%; }
-    50%  { background-position: 100% 100%; }
-    75%  { background-position: 0% 100%; }
-    100% { background-position: 0% 50%; }
-  }
+    @keyframes gradientFlow {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-  .container {
-    text-align: center;
-  }
+    .container {
+      text-align: center;
+      width: 100%;
+    }
 
-  h1 {
-    font-size: 2.8rem;
-    letter-spacing: 2px;
-    margin: 0;
-    text-shadow: 0 4px 15px rgba(58, 58, 58, 0.9);
-  }
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 15px rgba(58, 58, 58, 0.9);
+    }
 
-  .applied {
-    color: #2F7F6F;
-  }
+    .applied {
+      color: #2F7F6F;
+    }
 
-  .experiment {
-    color: #4F8FB3;
-  }
+    .experiment {
+      color: #4F8FB3;
+    }
 
-  .line {
-    width: 100%;
-    height: 3px;
-    margin: 18px 0;
-    background: linear-gradient(
-      270deg,
-      #2F7F6F,
-      #4F8FB3,
-      #E09A3E,
-      #3A3A3A,
-      #2F7F6F
-    );
-    background-size: 300% 100%;
-    animation: loading 3s linear infinite;
-  }
+    /* Loading Bar */
+    .line {
+      width: 60%;
+      height: 6px;
+      margin: 30px auto;
+      border-radius: 4px;
+      background: linear-gradient(
+        270deg,
+        #2F7F6F,
+        #4F8FB3,
+        #E09A3E,
+        #3A3A3A,
+        #2F7F6F
+      );
+      background-size: 400% 100%;
+      animation: loading 2.5s linear infinite;
+    }
 
-  @keyframes loading {
-    0%   { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+    @keyframes loading {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 400% 50%; }
+    }
 
-  p {
-    color: #e5e7eb;
-    font-size: 1rem;
-    margin: 0;
-  }
-</style>
+    /* Continuous Running Text */
+    .marquee {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 20px;
+    }
 
-<body>
+    .marquee-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll 12s linear infinite;
+    }
 
+    .marquee-content span {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #3A3A3A;
+      padding-right: 80px;
+    }
+
+    @keyframes scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
 </head>
 
 <body>
   <div class="container">
     <h1>
-      <span class="applied">Applied</span><span class="experiment">Experiment</span>
+      <span class="applied">Applied</span>
+      <span class="experiment">Experiment</span>
     </h1>
 
     <div class="line"></div>
 
-    <p>
-      Engineering. Science. Technology.<br>
-      Website under construction.
-    </p>
+    <div class="marquee">
+      <div class="marquee-content">
+        <span>COMING SOON</span>
+        <span>COMING SOON</span>
+        <span>COMING SOON</span>
+        <span>COMING SOON</span>
+      </div>
+    </div>
   </div>
 </body>
 </html>
