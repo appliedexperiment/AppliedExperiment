@@ -8,22 +8,29 @@
 
 
 <style>
-  body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Arial Black", Arial, sans-serif;
-    overflow: hidden;
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  overflow: hidden;
 
-    background: linear-gradient(
-      130deg,
-      #2F7F6F,
-      #4F8FB3,
-      #E09A3E,
-      #2F7F6F
+  background:
+    radial-gradient(circle at 20% 30%, rgba(224, 154, 62, 0.35), transparent 55%),
+    radial-gradient(circle at 75% 25%, rgba(224, 154, 62, 0.25), transparent 60%),
+    radial-gradient(circle at 60% 70%, rgba(224, 154, 62, 0.20), transparent 65%),
+    linear-gradient(
+      135deg,
+      #2F7F6F 0%,
+      #2F7F6F 40%,
+      #25685C 100%
     );
+
+  background-repeat: no-repeat;
+}
+
 
     background-size: 400% 400%;
     animation: gradientFlow 40s ease infinite;
