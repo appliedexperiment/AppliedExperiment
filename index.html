@@ -1,108 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AppliedExperiment</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AppliedExperiment</title>
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, Helvetica, sans-serif;
-      overflow: hidden;
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    overflow: hidden;
 
-      background: linear-gradient(
-        120deg,
-        #2F7F6F,
-        #4F8FB3,
-        #E09A3E,
-        #3A3A3A,
-        #2F7F6F
-      );
+    background: linear-gradient(
+      130deg,
+      #2F7F6F,
+      #4F8FB3,
+      #E09A3E,
+      #2F7F6F
+    );
 
-      background-size: 300% 300%;
-      animation: gradientFlow 25s ease infinite;
-    }
+    background-size: 400% 400%;
+    animation: gradientFlow 35s ease infinite;
+  }
 
-    @keyframes gradientFlow {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+  /* Random-feel flowing background */
+  @keyframes gradientFlow {
+    0%   { background-position: 0% 50%; }
+    20%  { background-position: 80% 20%; }
+    40%  { background-position: 20% 80%; }
+    60%  { background-position: 90% 60%; }
+    80%  { background-position: 10% 30%; }
+    100% { background-position: 0% 50%; }
+  }
 
-    .container {
-      text-align: center;
-      width: 100%;
-    }
+  .container {
+    text-align: center;
+    width: 100%;
+  }
 
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-      letter-spacing: 2px;
-      text-shadow: 0 4px 15px rgba(58, 58, 58, 0.9);
-    }
+  h1 {
+    font-size: 3.6rem;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 3px;
+    text-shadow: 0 6px 20px rgba(58, 58, 58, 0.9);
+  }
 
-    .applied {
-      color: #2F7F6F;
-    }
+  .applied { color: #2F7F6F; }
+  .experiment { color: #4F8FB3; }
 
-    .experiment {
-      color: #4F8FB3;
-    }
+  /* LOADING BAR */
+  .line {
+    width: 65%;
+    height: 18px; /* 3x lebih tebal */
+    margin: 35px auto;
+    border-radius: 10px;
+    background: linear-gradient(
+      90deg,
+      #2F7F6F,
+      #4F8FB3,
+      #E09A3E,
+      #2F7F6F
+    );
+    background-size: 300% 100%;
+    animation: loading 6s linear infinite;
+  }
 
-    /* Loading Bar */
-    .line {
-      width: 60%;
-      height: 6px;
-      margin: 30px auto;
-      border-radius: 4px;
-      background: linear-gradient(
-        270deg,
-        #2F7F6F,
-        #4F8FB3,
-        #E09A3E,
-        #3A3A3A,
-        #2F7F6F
-      );
-      background-size: 400% 100%;
-      animation: loading 2.5s linear infinite;
-    }
+  /* Gerak ke kanan & lebih lambat */
+  @keyframes loading {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+  }
 
-    @keyframes loading {
-      0%   { background-position: 0% 50%; }
-      100% { background-position: 400% 50%; }
-    }
+  /* Continuous COMING SOON */
+  .marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 25px;
+  }
 
-    /* Continuous Running Text */
-    .marquee {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      margin-top: 20px;
-    }
+  .marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 14s linear infinite;
+  }
 
-    .marquee-content {
-      display: inline-block;
-      white-space: nowrap;
-      animation: scroll 12s linear infinite;
-    }
+  .marquee-content span {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #3A3A3A;
+    padding-right: 80px;
+  }
 
-    .marquee-content span {
-      font-size: 4rem;
-      font-weight: bold;
-      color: #3A3A3A;
-      padding-right: 80px;
-    }
-
-    @keyframes scroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-  </style>
+  @keyframes scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
 </head>
 
 <body>
