@@ -16,12 +16,11 @@
     font-family: Arial, Helvetica, sans-serif;
     color: #e2e8f0;
     overflow: hidden;
-
     background: #3A3A3A;
     position: relative;
   }
 
-  /* Abstract dynamic background layer */
+  /* Dynamic abstract background */
   body::before {
     content: "";
     position: absolute;
@@ -46,46 +45,30 @@
         #4F8FB330,
         #E09A3E30
       );
-
     background-blend-mode: soft-light;
     animation: drift 28s ease-in-out infinite alternate;
     pointer-events: none;
   }
 
   @keyframes drift {
-    0% {
-      transform: translate(-5%, -5%) rotate(0deg);
-    }
-    25% {
-      transform: translate(6%, -10%) rotate(35deg);
-    }
-    50% {
-      transform: translate(12%, 6%) rotate(70deg);
-    }
-    75% {
-      transform: translate(-10%, 12%) rotate(120deg);
-    }
-    100% {
-      transform: translate(6%, 18%) rotate(180deg);
-    }
+    0%   { transform: translate(-5%, -5%) rotate(0deg); }
+    25%  { transform: translate(6%, -10%) rotate(35deg); }
+    50%  { transform: translate(12%, 6%) rotate(70deg); }
+    75%  { transform: translate(-10%, 12%) rotate(120deg); }
+    100% { transform: translate(6%, 18%) rotate(180deg); }
   }
 
   .container {
     position: relative;
     z-index: 1;
-
-    background: rgba(224, 154, 62, 0.18);
-    padding: 40px 60px;
-    border-radius: 12px;
-    box-shadow: 0 12px 30px rgba(58, 58, 58, 0.35);
-    border: 1px solid rgba(224, 154, 62, 0.25);
-    backdrop-filter: blur(6px);
   }
 
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2.8rem;
     letter-spacing: 2px;
+    margin-bottom: 18px;
+    text-shadow:
+      0 4px 12px rgba(58, 58, 58, 0.9);
   }
 
   .applied {
@@ -96,20 +79,38 @@
     color: #4F8FB3;
   }
 
+  /* Loading line */
+  .line {
+    width: 160px;
+    height: 3px;
+    margin: 0 auto 18px;
+    background: linear-gradient(
+      90deg,
+      #2F7F6F,
+      #4F8FB3,
+      #E09A3E,
+      #3A3A3A,
+      #2F7F6F
+    );
+    background-size: 300% 100%;
+    animation: loading 2.5s linear infinite;
+    border-radius: 2px;
+  }
+
+  @keyframes loading {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
   p {
     color: #d1d5db;
     font-size: 1rem;
-    margin-top: 12px;
-  }
-
-  .line {
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(to right, #2F7F6F, #E09A3E);
-    margin: 20px auto;
+    margin-top: 6px;
   }
 </style>
+
 <body>
+
 </head>
 
 <body>
